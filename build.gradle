@@ -1,0 +1,53 @@
+//noinspection GroovyAssignabilityCheck
+plugins {
+    id 'java'
+    id 'groovy'
+    id 'application'
+}
+
+group 'com.xtex'
+version '1.0-SNAPSHOT'
+
+repositories {
+    maven { url 'https://jitpack.io' }
+    maven { url 'https://maven.aliyun.com/repository/public/' }
+    maven { url 'https://dl.bintray.com/karlatemp/misc' }
+}
+
+dependencies {
+    implementation 'org.codehaus.groovy:groovy:3.0.5'
+
+    implementation 'com.github.mamoe.mirai:mirai-core:2.2.0-dev-5'
+    implementation 'com.github.mamoe.mirai:mirai-core-jvm:2.2.0-dev-5'
+    implementation 'com.github.mamoe.mirai:mirai-core-api-jvm:2.2.0-dev-5'
+    implementation 'com.github.mamoe.mirai:mirai-core-utils-jvm:2.2.0-dev-5'
+    runtimeOnly 'net.mamoe:mirai-login-solver-selenium:1.0-dev-15'
+
+    implementation 'org.apache.logging.log4j:log4j-core:2.14.0'
+    implementation 'org.apache.logging.log4j:log4j-api:2.14.0'
+    implementation 'org.apache.logging.log4j:log4j-slf4j-impl:2.14.0'
+    implementation 'org.slf4j:slf4j-api:1.7.30'
+
+    implementation 'com.google.code.gson:gson:2.8.6'
+    implementation 'com.squareup.okhttp3:okhttp:4.9.0'
+    implementation 'commons-io:commons-io:2.8.0'
+    implementation 'org.jetbrains:annotations:20.1.0'
+}
+
+application {
+    applicationName = 'xtexBot'
+    mainClassName = 'com.xtex.bot.main.Main'
+    applicationDefaultJvmArgs = ['-Dfile.encoding=UTF-8']
+}
+
+distributions {
+    //noinspection GroovyAssignabilityCheck
+    main {
+        contents {
+            from 'LICENSE'
+        }
+    }
+}
+
+//noinspection GroovyUnusedAssignment
+sourceCompatibility = targetCompatibility = JavaVersion.VERSION_1_8
