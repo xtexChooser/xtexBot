@@ -12,6 +12,7 @@ import net.mamoe.mirai.event.events.BotInvitedJoinGroupRequestEvent
 import net.mamoe.mirai.event.events.BotJoinGroupEvent
 import net.mamoe.mirai.event.events.GroupMessageEvent
 import net.mamoe.mirai.event.events.NewFriendRequestEvent
+import okhttp3.OkHttpClient
 import org.jetbrains.annotations.Nullable
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
@@ -24,6 +25,7 @@ class XBot implements Runnable {
     static final Logger loggerGroupMessage = LoggerFactory.getLogger 'Message:Group'
     final Configuration configuration
     final File data
+    final OkHttpClient httpClient = new OkHttpClient()
     @Nullable
     Bot bot = null
     @Nullable

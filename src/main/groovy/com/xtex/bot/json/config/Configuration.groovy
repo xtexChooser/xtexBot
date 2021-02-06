@@ -11,6 +11,7 @@ class Configuration {
     AdminConfiguration admin
     GroupConfiguration group
     FriendConfiguration friend
+    String wiki
 
     static Configuration load() {
         new Gson().fromJson(FileUtils.readFileToString(new File('config.json'), StandardCharsets.UTF_8), Configuration)

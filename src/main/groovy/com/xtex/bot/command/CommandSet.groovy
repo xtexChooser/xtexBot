@@ -3,6 +3,7 @@ package com.xtex.bot.command
 import com.xtex.bot.bot.XBot
 import com.xtex.bot.command.admin.StopCommand
 import com.xtex.bot.command.base.HelpCommand
+import com.xtex.bot.command.wiki.WikiSearchCommand
 import net.mamoe.mirai.contact.Group
 import net.mamoe.mirai.contact.Member
 import net.mamoe.mirai.message.data.MessageChain
@@ -11,7 +12,8 @@ class CommandSet extends HashMap<String, Command> implements Command {
 
     public static final CommandSet ROOT = new CommandSet('/', [
             'help': new HelpCommand(),
-            'stop': new StopCommand()
+            'stop': new StopCommand(),
+            'wiki': new WikiSearchCommand()
     ])
 
     final String path
